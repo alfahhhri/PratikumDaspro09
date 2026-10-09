@@ -3,7 +3,7 @@ public class StudiKasus209PKM {
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
         String namaMahasiswa,jenisKegiatan;
-        int jumlahDokumen,peringkatJuara,totalDokumen,statusPendanaan;
+        int jumlahDokumen,peringkatJuara,kurangDokumen,statusPendanaan;
 
         System.out.println("Masukkan Nama Mahasiswa :");
         namaMahasiswa=sc.nextLine();
@@ -24,8 +24,8 @@ public class StudiKasus209PKM {
             if (jumlahDokumen==4) {
                 System.out.println("Dokumen anda lengkap. Silahkan ambil dana penghargaan");
             } else {
-                totalDokumen=4-jumlahDokumen;
-                System.out.println("Dokumen anda tidak lengkap (Kurang " +totalDokumen + " dokumen). Dana penghargaan tidak diberikan.");
+                kurangDokumen=4-jumlahDokumen;
+                System.out.println("Dokumen anda tidak lengkap (Kurang " +kurangDokumen + " dokumen). Dana penghargaan tidak diberikan.");
             }
             } else {
                 System.out.println("Maaf, anda belum juara. Tetap Semangat");
@@ -33,14 +33,18 @@ public class StudiKasus209PKM {
 
         } else if (jenisKegiatan.equalsIgnoreCase("PKM")) {
             System.out.println("Masukkan Status pendanaan (1/0) : ");
-            statusPendanaan=sc.nextInt();                
+            statusPendanaan=sc.nextInt();
+            if (statusPendanaan==1) {
+                System.out.println("Selamat anda lolos");                
             if (jumlahDokumen==4) {
-                statusPendanaan=1;
                 System.out.println("Dokumen Lengkap, dana diberikan");
 
             } else {
-                totalDokumen=4-jumlahDokumen;
-                System.out.println("Dokumen tidak lengkap (Kurang " +totalDokumen + " dokumen). Dana tidak diberikan");
+                kurangDokumen=4-jumlahDokumen;
+                System.out.println("Dokumen tidak lengkap (Kurang " +kurangDokumen + " dokumen). Dana tidak diberikan");
+            }
+            } else {
+                System.out.println("Maaf anda tidak lolos");
             }
         }
 
